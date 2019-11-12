@@ -12,7 +12,7 @@
     <authentication-manager>
         <authentication-provider>
             <user-service>
-                <user name="nnamdi" authorities="ROLE_USER" password="123456"/>
+                <user name="nnamdi" authorities="ROLE_ADMIN" password="$2a$10$sGqRUeQwmWx6nimdFQOJ2Obig0I/7locA2KZ4VxHIPxxghfSTIRli"/>
             </user-service>
         </authentication-provider>
     </authentication-manager>
