@@ -2,6 +2,11 @@ package com.nnamdi.web.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+/**
+ * Programmatically configuring ServletContext making web.xml not required.
+ * AbstractAnnotationConfigDispatcherServletInitializer implement WebApplicationInitializer which configures servletContext
+ */
+
 public class MvcWebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     //Loads spring security configuration
