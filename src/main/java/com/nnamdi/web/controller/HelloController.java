@@ -13,7 +13,7 @@ public class HelloController {
     public ModelAndView welcomePage (Principal principal) {
         ModelAndView model = new ModelAndView();
         model.addObject("title", "Spring Security Hello World");
-        model.addObject("message","This is the welcome page" + principal.getName());
+        model.addObject("message","This is the welcome page " + principal.getName());
         model.setViewName("hello");
         return model;
     }

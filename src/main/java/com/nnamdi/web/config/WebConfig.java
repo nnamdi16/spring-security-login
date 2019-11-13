@@ -14,10 +14,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer {
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
-        registry.jsp().prefix("webapp/WEB-INF/pages/").suffix(".jsp");
+        registry.jsp().prefix("/WEB-INF/pages/").suffix(".jsp");
     }
 
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/admin**").setViewName("admin");
+        registry.addViewController("/admin").setViewName("admin");
     }
 }
