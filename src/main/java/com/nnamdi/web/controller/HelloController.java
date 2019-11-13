@@ -5,13 +5,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.security.Principal;
+
 @Controller
 public class HelloController {
     @RequestMapping(value = {"/", "/welcome**"}, method = RequestMethod.GET)
-    public ModelAndView welcomePage () {
+    public ModelAndView welcomePage (Principal principal) {
         ModelAndView model = new ModelAndView();
         model.addObject("title", "Spring Security Hello World");
-        model.addObject("message","This is the welcome page");
+        model.addObject("message","This is the welcome page" + principal.getName());
         model.setViewName("hello");
         return model;
     }
