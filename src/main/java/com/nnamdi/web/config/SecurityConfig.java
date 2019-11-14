@@ -18,11 +18,15 @@ import javax.sql.DataSource;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    public DataSource dataSource;
+    public CustomUserDetailsService customUserDetailsService;
+
+//    @Autowired
+//    public DataSource dataSource;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(jdbcUserDetailsManager()).passwordEncoder(passwordEncoder());
+        auth.userDetailsService(customUserDetailsService);
+//        auth.userDetailsService(jdbcUserDetailsManager()).passwordEncoder(passwordEncoder());
     }
 
     @Override
@@ -37,12 +41,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable();
 
     }
-    @Bean
-    public JdbcUserDetailsManager jdbcUserDetailsManager() {
-        JdbcUserDetailsManager jdbcUserDetailsManager = new JdbcUserDetailsManager();
-        jdbcUserDetailsManager.setDataSource(dataSource);
-        return jdbcUserDetailsManager;
-    }
+
+//    @Bean
+//    public JdbcUserDetailsManager jdbcUserDetailsManager() {
+//        JdbcUserDetailsManager jdbcUserDetailsManager = new JdbcUserDetailsManager();
+//        jdbcUserDetailsManager.setDataSource(customUserDetailsService);
+//        return jdbcUserDetailsManager;
+//    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
