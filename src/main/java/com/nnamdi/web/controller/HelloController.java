@@ -5,9 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.security.Principal;
+
 @Controller
 public class HelloController {
-    @RequestMapping(value = {"/", "/welcome**"}, method = RequestMethod.GET)
+    @RequestMapping(value = { "/hello**"}, method = RequestMethod.GET)
     public ModelAndView welcomePage () {
         ModelAndView model = new ModelAndView();
         model.addObject("title", "Spring Security Hello World");
@@ -18,11 +20,11 @@ public class HelloController {
 
 
     @RequestMapping(value = "/admin**", method = RequestMethod.GET)
-    public ModelAndView adminPage() {
+    public ModelAndView adminPage(Principal principal) {
         ModelAndView model = new ModelAndView();
         model.addObject("id", "1");
-        model.addObject("title", "Spring Security Hello World");
-        model.addObject("message", "This is protected page");
+        model.addObject("title", "Spring Security Hello World " + principal.getName());
+        model.addObject("message", "This is protected page " );
         model.setViewName("admin");
         return model;
     }
