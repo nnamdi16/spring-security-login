@@ -52,4 +52,8 @@ public class EmployeeController {
         return checkIfUserExists(username);
     }
 
+    /**
+     * JdbcUserDetailsManager and Password
+     */
+
 }
