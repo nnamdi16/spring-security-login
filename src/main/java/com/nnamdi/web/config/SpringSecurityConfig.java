@@ -8,11 +8,11 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 import java.net.HttpCookie;
-
-
-@Configuration
-@EnableWebSecurity
-public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
+//
+//
+//@Configuration
+//@EnableWebSecurity
+//public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
      *
@@ -25,19 +25,19 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
      * Configure method configures the HttpSecurity class which authorises each http request which has been made
      */
 
-@Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-    auth.inMemoryAuthentication().withUser("nnamdi").password("$2a$10$zbak6MiWJO/wSXDjEROE6OF2aKoZQlkjWyqx8.aEad6Nm0174Mnn2").roles("ADMIN");
-}
-
-@Override
-    protected void configure(HttpSecurity httpSecurity) throws Exception{
-    httpSecurity.authorizeRequests()
-            .antMatchers("/", "/hello").permitAll()
-            .antMatchers("/admin").access("hasRole('ROLE_ADMIN')")
-            .and().formLogin();
-
-}
-
-
-}
+//@Autowired
+//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+//    auth.inMemoryAuthentication().withUser("nnamdi").password("$2a$10$zbak6MiWJO/wSXDjEROE6OF2aKoZQlkjWyqx8.aEad6Nm0174Mnn2").roles("ADMIN");
+//}
+//
+//@Override
+//    protected void configure(HttpSecurity httpSecurity) throws Exception{
+//    httpSecurity.authorizeRequests()
+//            .antMatchers("/", "/hello").permitAll()
+//            .antMatchers("/admin").access("hasRole('ROLE_ADMIN')")
+//            .and().formLogin();
+//
+//}
+//
+//
+//}
