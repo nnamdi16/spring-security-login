@@ -1,0 +1,5 @@
+
+INSERT INTO employee VALUES (1,'JIP1',10,'IT');
+INSERT INTO employee VALUES (2,'JIP2',20,'IT');
+INSERT INTO employee VALUES (3,'JIP3',30,'IT');
+INSERT INTO employee VALUES (4,'JIP4',40,'IT');
